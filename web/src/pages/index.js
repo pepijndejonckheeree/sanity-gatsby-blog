@@ -66,6 +66,7 @@ export const query = graphql`
 
 const IndexPage = props => {
   const {data, errors} = props
+  console.log('data', data)
 
   if (errors) {
     return (
@@ -81,7 +82,6 @@ const IndexPage = props => {
       .filter(filterOutDocsWithoutSlugs)
       .filter(filterOutDocsPublishedInTheFuture)
     : []
-
   if (!site) {
     throw new Error(
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
